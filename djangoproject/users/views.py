@@ -23,3 +23,7 @@ class UserLoginView(LoginView):
 
 # Rename UserLoginView to user_login for URL mapping
 user_login = UserLoginView.as_view()
+
+
+
+

@@ -28,12 +28,17 @@
         </div>
         <div class="col-md-4">
           <p>
-            <a href="{% url 'users:register' %}" class="btn btn-primary">SignUp</a>
-            <a href="{% url 'users:login' %}" class="btn btn-primary">Login</a>
-            <a href="{% url 'users:logout' %}" class="btn btn-primary">Logout</a>
+              <a href="{% url 'users:register' %}" class="btn btn-primary">SignUp</a>
+              <a href="{% url 'users:login' %}" class="btn btn-primary">Login</a>
+              <a href="{% url 'users:logout' %}" class="btn btn-primary">Logout</a>
           </p>
-        </div>
-        
+          {% if user.is_authenticated %}
+              <div style="margin-top: 20px;"> 
+                  <a href="{% url 'quotes:add_author' %}" class="btn btn-primary">Add New Author</a>
+                  <a href="{% url 'quotes:add_quote' %}" class="btn btn-primary">Add New Quote</a>
+              </div>
+          {% endif %}
+      </div>
       </div>
 
       {% block content %} {% endblock %}
